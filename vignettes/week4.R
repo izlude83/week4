@@ -5,6 +5,7 @@ knitr::opts_chunk$set(
 )
 library(dplyr)
 library(tidyr)
+library(week4)
 
 ## ------------------------------------------------------------------------
 dat <- fars_read(make_filename(2013))

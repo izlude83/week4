@@ -27,6 +27,6 @@ from the dplyr package to convert data into a data frame and return it as output
 to the function.
 }
 \examples{
-fars_read("accident_2015.csv.bz")
+fars_read(make_filename (2015))
 
 }

@@ -1,3 +1,4 @@
+globalVariables(c("MONTH", "STATE", "year", "n"))
 #' fars_read
 #'
 #' This function takes in "filename" as an argument, and first checks whether
@@ -17,7 +18,7 @@
 #' defined file if it is present, or a message indicating the file is not found otherwise.
 #'
 #' @examples
-#' fars_read("accident_2015.csv.bz")
+#' fars_read(make_filename (2015))
 #'
 #' @importFrom readr read_csv
 #' @importFrom dplyr tbl_df
