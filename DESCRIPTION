@@ -1,0 +1,15 @@
+Package: week4
+Type: Package
+Title: Functions for Analyzing FARS Data
+Version: 0.1.0
+Author: Steven Shum
+Maintainer: Steven Shum <steven_shum@mewr.gov.sg>
+Description: Functions for loading, analzying and mapping FARS data. 
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Suggests: knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1

@@ -1,0 +1,63 @@
+---
+title: "FARS Functions in the week4 Package"
+author: "Steven Shum"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{FAR Functions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(dplyr)
+library(tidyr)
+```
+
+## Introduction
+
+The US National Highway Traffic Safety Administration's Fatality Analysis Reporting System (FARS) is a nationwide census providing American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes. The week4 package provides functions which can be used to load the data into R for basic analysis and mapping. These are:
+(1) fars_read
+(2) make_filename
+(3) fars_read_years
+(4) fars_summarise_years
+(5) fars_map_state
+
+## fars_read and make_filename
+
+The fars_read function reads the FARS data file and loads it into a data frame in R for subsequent analysis. If the file does not exist, it returns a file does not exist message. 
+
+The FARS data files share a common format - accident_<year>.csv.bz2. The make_filename function provides a easy way to return the full filename to be entered by simply keying in the year. 
+
+```{r}
+dat <- fars_read(make_filename(2013))
+```
+
+## fars_read_years
+
+The fars_read_years function loads files from multiple years and returns the months and years data from these files. Input argument is year or a list of years (e.g. 2013).
+
+```{r}
+fars_read_years(c(2013, 2014))
+```
+
+## fars_summarize_years
+
+The fars_summarize_years function summarises the number of accidents by year and month. Input argument is year or a list of years (e.g. 2013).
+
+```{r}
+fars_summarize_years(c(2013, 2014))
+```
+
+## fars_map_state
+
+The fars_map_state command provides a visualisation of the location of accidents in a given state in a given year. State should be entered as a 1 or 2-digit code (1 to 56). Below shows a sample plot for state = 20 in year 2013. 
+
+```{r}
+fars_map_state (20, 2013)
+```
+
